@@ -6,11 +6,8 @@ interface Props {
 
 const {
 	title = 'Emergent Holdings',
-	description = 'Private holding company focused on long-term ownership, disciplined capital allocation, and building enduring value.',
+	description = 'Emergent Holdings — agent fleet visualization.',
 } = Astro.props;
-
-const siteUrl = Astro.site ?? new URL('https://emergent.holdings');
-const canonical = new URL(Astro.url.pathname, siteUrl).href;
 ---
 
 <!doctype html>
@@ -22,44 +19,13 @@ const canonical = new URL(Astro.url.pathname, siteUrl).href;
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
-			rel="stylesheet"
-		/>
 		<title>{title}</title>
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={canonical} />
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
 	</head>
 	<body>
-		<a class="skip-link" href="#main">Skip to content</a>
-		<header class="site-header">
-			<div class="header-inner">
-				<a class="logo" href="/">
-					<span class="logo-mark" aria-hidden="true">E</span>
-					<span>Emergent Holdings</span>
-				</a>
-				<nav class="nav" aria-label="Primary">
-					<a href="#approach">Approach</a>
-					<a href="#focus">Focus</a>
-					<a href="#contact">Contact</a>
-				</nav>
-			</div>
-		</header>
 		<slot />
-		<footer class="site-footer">
-			<span>&copy; {new Date().getFullYear()} Emergent Holdings. All rights reserved.</span>
-			<a href="mailto:hello@emergent.holdings">hello@emergent.holdings</a>
-		</footer>
 	</body>
 </html>
 
 <style is:global>
-	@import '../styles/global.css';
+	@import '../styles/emergent.css';
 </style>
