@@ -20,21 +20,17 @@ npm run preview
 
 Output is written to `dist/`.
 
-## Deploy on Cloudflare Pages
+## Deploy to Cloudflare (Workers static assets)
 
-1. **Register the domain** (if you have not already): Cloudflare Dashboard → **Domain Registration** → search `emergent.holdings` → checkout (~$50/yr at-cost).
-2. **Create a Pages project**: Workers & Pages → **Create** → **Pages** → **Connect to Git** (GitHub) or **Direct Upload**.
-3. **Build settings** (Git-connected repo):
+After `npm run build`:
 
-   | Setting | Value |
-   |---------|--------|
-   | Framework preset | Astro |
-   | Build command | `npm run build` |
-   | Build output directory | `dist` |
-   | Node.js version | 22 (or latest LTS in Pages settings) |
+```bash
+npx wrangler deploy
+```
 
-4. **Custom domain**: Pages project → **Custom domains** → add `emergent.holdings` and `www.emergent.holdings` (redirect www → apex in Cloudflare if desired).
-5. If the domain is on Cloudflare, DNS records for Pages are applied automatically once the domain is linked.
+`wrangler.toml` attaches **emergent.holdings** and **www.emergent.holdings** as custom domains. Requires `npx wrangler login` once on your machine.
+
+**Repo:** https://github.com/drcitrino/emergent-holdings
 
 ## Content updates
 
