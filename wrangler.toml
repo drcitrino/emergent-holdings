@@ -1,13 +1,3 @@
 name = "emergent-holdings"
 compatibility_date = "2025-01-01"
-
-[assets]
-directory = "./dist"
-
-[[routes]]
-pattern = "emergent.holdings"
-custom_domain = true
-
-[[routes]]
-pattern = "www.emergent.holdings"
-custom_domain = true
+pages_build_output_dir = "./dist"
